@@ -1,4 +1,4 @@
-package by.quaks.chatmanage;
+package by.quaks.chatmanager;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
