@@ -1,0 +1,25 @@
+GlobalChatPrefix: "!"
+Shortcut:
+  Gif:
+    Label: "[GIF]"
+    Color: "#b8b8b8"
+  Video:
+    Label: "[Video]"
+    Color: "#b8b8b8"
+  Image:
+    Label: "[Image]"
+    Color: "#b8b8b8"
+  Link:
+    Label: "[Link]"
+    Color: "#b8b8b8"
+Message:
+  Form: "%chat-type% • %player-name% | %message%"
+  Color: "#FFFFFF"
+Global:
+  Label: "[G]"
+  Color: "#05BFDB"
+Local:
+  Label: "[L]"
+  Color: "#00FFCA"
+Player:
+  Color: "#088395"

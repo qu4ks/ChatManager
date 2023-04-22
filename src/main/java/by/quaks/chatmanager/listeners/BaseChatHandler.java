@@ -16,6 +16,5 @@ public class BaseChatHandler implements Listener {
         Player p = event.getPlayer();
         Message msg = new Message(event.getMessage(),event.getPlayer().getName());
         p.spigot().sendMessage(msg.TextComponent());
-//        p.spigot().sendMessage(new TextComponent("Abobik")); //todo
     }
 }

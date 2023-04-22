@@ -1,5 +1,6 @@
 package by.quaks.chatmanager.utils;
 
+import by.quaks.chatmanager.files.MainConfig;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.*;
 
@@ -50,15 +51,22 @@ public class ChatComponentHandler {
             String url = matcher.group();
             TextComponent link = new TextComponent("");
             if (url.endsWith(".gif")) {
-                link.setText("[GIF]");//TODO: MTC
+                //link.setText("[GIF]");
+                link.setText(MainConfig.get().getString("Shortcut.Gif.Label"));
+                link.setColor(ChatColor.of(MainConfig.get().getString("Shortcut.Gif.Color")));
             } else if (url.endsWith(".mp4") || url.endsWith(".avi") || url.endsWith(".mov")) {
-                link.setText("[VIDEO]");//TODO: MTC
+                //link.setText("[VIDEO]");
+                link.setText(MainConfig.get().getString("Shortcut.Video.Label"));
+                link.setColor(ChatColor.of(MainConfig.get().getString("Shortcut.Video.Color")));
             } else if (url.endsWith(".png") || url.endsWith(".jpg") || url.endsWith(".jpeg")) {
-                link.setText("[IMAGE]");//TODO: MTC
+                //link.setText("[IMAGE]");
+                link.setText(MainConfig.get().getString("Shortcut.Image.Label"));
+                link.setColor(ChatColor.of(MainConfig.get().getString("Shortcut.Image.Color")));
             } else {
-                link.setText("[LINK]");
+                //link.setText("[LINK]");
+                link.setText(MainConfig.get().getString("Shortcut.Link.Label"));
+                link.setColor(ChatColor.of(MainConfig.get().getString("Shortcut.Link.Color")));
             }
-            link.setColor(ChatColor.AQUA); //TODO: MTC
             link.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(url).create()));
             link.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, url));
             String preLinkText = text.substring(lastIndex, matcher.start());
