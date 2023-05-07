@@ -8,10 +8,6 @@ import net.md_5.bungee.api.chat.TextComponent;
 import java.util.HashMap;
 import java.util.Map;
 
-enum Type {
-    LOCAL,
-    GLOBAL
-}
 public class Message {
     private TextComponent componentPlayerName;
     private TextComponent componentMessage;
