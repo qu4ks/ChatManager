@@ -1,4 +1,4 @@
-package by.quaks.chatmanager;
+package by.quaks.chatmanager.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
