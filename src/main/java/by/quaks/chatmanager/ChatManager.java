@@ -3,6 +3,9 @@ package by.quaks.chatmanager;
 import by.quaks.chatmanager.files.Config;
 import by.quaks.chatmanager.files.MainConfig;
 import by.quaks.chatmanager.listeners.BaseChatHandler;
+import by.quaks.chatmanager.listeners.DiscordSrvListener;
+import by.quaks.chatmanager.utils.EventRegisterer;
+import github.scarsz.discordsrv.DiscordSRV;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -21,8 +24,10 @@ public final class ChatManager extends JavaPlugin {
             }
         }
     }
+    private DiscordSrvListener discordsrvListener = new DiscordSrvListener(this);
     @Override
     public void onEnable() {
+        DiscordSRV.api.subscribe(discordsrvListener);
         if(!this.getDataFolder().exists()) { // Создание папки для хранения конфигурационных файлов
             try {
                 this.getDataFolder().mkdir();
@@ -42,5 +47,6 @@ public final class ChatManager extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        DiscordSRV.api.unsubscribe(discordsrvListener);
     }
 }
